@@ -9,6 +9,9 @@ import androidx.navigation.fragment.findNavController
 import com.a7medkenawy.bloodbank.R
 import com.a7medkenawy.bloodbank.databinding.FragmentRegisterationScreenBinding
 import com.a7medkenawy.bloodbank.databinding.FragmentSecondScreenBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 
 class RegistrationScreen : Fragment() {
 

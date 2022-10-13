@@ -56,7 +56,7 @@
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/otp_background"
             android:ems="10"
             android:gravity="center"
@@ -68,7 +68,7 @@
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/otp_screen_phone_number" />
 
         <EditText
             android:id="@+id/input2"
@@ -193,7 +193,7 @@
             android:id="@+id/verify_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/otb_button_background"
             android:backgroundTintMode="src_over"
             android:fontFamily="@font/roboto_bold"
@@ -203,11 +203,12 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="@+id/input6"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/input1"
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/otp_screen_back_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -215,6 +216,31 @@
             android:src="@drawable/ic_arrow_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/verify_otp_progressbar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:visibility="invisible"
+            android:indeterminateTint="@android:color/holo_red_light"
+            app:layout_constraintBottom_toBottomOf="@+id/verify_btn"
+            app:layout_constraintEnd_toEndOf="@+id/verify_btn"
+            app:layout_constraintStart_toStartOf="@+id/verify_btn"
+            app:layout_constraintTop_toTopOf="@+id/verify_btn" />
+
+        <TextView
+            android:id="@+id/otp_screen_phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="+201201204217"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="@+id/textView7"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

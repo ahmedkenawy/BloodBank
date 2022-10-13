@@ -9,8 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.a7medkenawy.bloodbank.R
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SplashScreen : Fragment() {
 
     override fun onCreateView(

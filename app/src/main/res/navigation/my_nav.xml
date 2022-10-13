@@ -25,7 +25,9 @@
         <action
             android:id="@+id/action_splashScreen_to_registerationScreen2"
             app:destination="@id/registerationScreen"
-            app:enterAnim="@android:anim/slide_in_left" />
+            app:enterAnim="@android:anim/slide_in_left"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentViewPager"
@@ -49,7 +51,8 @@
             android:id="@+id/action_registerationScreen_to_verifyMobileNumberScreen"
             app:destination="@id/verifyMobileNumberScreen"
             app:enterAnim="@android:anim/slide_in_left"
-            app:popEnterAnim="@android:anim/slide_out_right" />
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/registerationScreen" />
     </fragment>
     <fragment
         android:id="@+id/verifyMobileNumberScreen"
@@ -63,11 +66,22 @@
             android:id="@+id/action_verifyMobileNumberScreen_to_sendOtpScreen"
             app:destination="@id/sendOtpScreen"
             app:enterAnim="@android:anim/slide_in_left"
-            app:popEnterAnim="@android:anim/slide_out_right" />
+            app:popEnterAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/verifyMobileNumberScreen" />
     </fragment>
     <fragment
         android:id="@+id/sendOtpScreen"
         android:name="com.a7medkenawy.bloodbank.presentation.intro.regestration.virefy.SendOtpScreen"
         android:label="fragment_send_otp_screen"
-        tools:layout="@layout/fragment_send_otp_screen" />
+        tools:layout="@layout/fragment_send_otp_screen" >
+        <action
+            android:id="@+id/action_sendOtpScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+        <action
+            android:id="@+id/action_sendOtpScreen_to_verifyMobileNumberScreen"
+            app:destination="@id/verifyMobileNumberScreen" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+    </fragment>
 </navigation>
