@@ -3,13 +3,17 @@ package com.a7medkenawy.bloodbank.domain.usecase.register_use_case.phone_number_
 import android.app.Activity
 import android.widget.Toast
 import com.a7medkenawy.bloodbank.domain.repository.FirebaseRepository
-import com.a7medkenawy.bloodbank.presentation.intro.regestration.virefy.VerifyViewModel
+import com.a7medkenawy.bloodbank.presentation.intro.regestration.sgininwithphonenumber.VerifyViewModel
 import javax.inject.Inject
 
 class PhoneNumberUseCase @Inject constructor(
     val firebaseRepository: FirebaseRepository,
 ) {
-    fun signInWithPhoneNumber(phoneNumber: String, activity: Activity, viewModel: VerifyViewModel) {
+    suspend fun signInWithPhoneNumber(
+        phoneNumber: String,
+        activity: Activity,
+        viewModel: VerifyViewModel,
+    ) {
         if (phoneNumber.trim().isNotEmpty()) {
             firebaseRepository.signInWithPhoneNumber(phoneNumber, activity, viewModel)
         } else {
@@ -17,4 +21,6 @@ class PhoneNumberUseCase @Inject constructor(
                 .show()
         }
     }
+
+
 }

@@ -12,8 +12,8 @@
     <string name="your_blood_can_save_live">Your Blood Can Save Live</string>
     <string name="finish">Finish</string>
     <string name="your_blood_pack_can_save_someone_life_your_blood_pack_is_very_important">your blood pack can save someone life your blood pack is very important</string>
-    <string name="facebook">Facebook</string>
-    <string name="google">Google</string>
+    <string name="facebook">Sign in Facebook</string>
+    <string name="google">Sign in Google</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="enter_phone_number">enter phone number</string>
     <string name="otp_verification">OTP Verification</string>
@@ -23,4 +23,11 @@
     <string name="didn_t_receive_the_otp">Didn\'t receive the OTP?</string>
     <string name="resend_otp"><u>RESEND OTP</u></string>
     <string name="verify">VERIFY</string>
+
+
+    <string name="facebook_app_id">3423258081220649</string>
+    <string name="fb_login_protocol_scheme">fb3423258081220649</string>
+    <string name="facebook_client_token">4e39fe6958e8af9414f75a04eca54217</string>
+
+
 </resources>

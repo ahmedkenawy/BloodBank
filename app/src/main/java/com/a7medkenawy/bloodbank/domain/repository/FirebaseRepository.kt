@@ -1,13 +1,17 @@
 package com.a7medkenawy.bloodbank.domain.repository
 
 import android.app.Activity
-import androidx.lifecycle.ViewModel
-import com.a7medkenawy.bloodbank.presentation.intro.regestration.virefy.VerifyViewModel
+import com.a7medkenawy.bloodbank.presentation.intro.regestration.sgininwithphonenumber.VerifyViewModel
 
 interface FirebaseRepository {
 
-    fun signInWithPhoneNumber(
+    suspend fun signInWithPhoneNumber(
         phoneNumber: String, activity: Activity,
         viewModel: VerifyViewModel,
     )
+
+    suspend fun signInWithGoogle(activity: Activity,serverClient: String)
+
+    suspend fun  signInWithFacebook(activity: Activity)
+
 }
