@@ -28,6 +28,15 @@
     <string name="facebook_app_id">3423258081220649</string>
     <string name="fb_login_protocol_scheme">fb3423258081220649</string>
     <string name="facebook_client_token">4e39fe6958e8af9414f75a04eca54217</string>
+    <string name="login_register"><![CDATA[LOGIN & REGISTER]]></string>
+    <string name="become_donor">Become Donor</string>
+    <string name="gender">Gender</string>
+    <string name="select_blood_group">Select Blood Group</string>
+    <string name="name">Name</string>
+    <string name="e_mail">E-mail</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="phone_number">Phone Number</string>
 
 
 </resources>

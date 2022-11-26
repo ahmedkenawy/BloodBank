@@ -13,46 +13,70 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.a7medkenawy.bloodbank.R
 import com.a7medkenawy.bloodbank.databinding.FragmentRegisterationScreenBinding
+import com.a7medkenawy.bloodbank.presentation.intro.complete_registration.CompleteRegistrationViewModel
 import com.a7medkenawy.bloodbank.presentation.intro.regestration.signinwithfacebook.SignInWithFacebookViewModel
 import com.a7medkenawy.bloodbank.presentation.intro.regestration.signinwithgoogle.SignInWithGoogleViewModel
+import com.a7medkenawy.bloodbank.utils.TypesOfRegistration
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 
 @AndroidEntryPoint
 
 class RegistrationScreen : Fragment() {
-    private lateinit var mAuth: FirebaseAuth
-    private lateinit var binding: FragmentRegisterationScreenBinding
+    @Inject
+    lateinit var mAuth: FirebaseAuth
     private lateinit var signInWithGoogleViewModel: SignInWithGoogleViewModel
     private lateinit var signInWithFacebookViewModel: SignInWithFacebookViewModel
+    private lateinit var completeRegistrationViewModel: CompleteRegistrationViewModel
+    private lateinit var binding: FragmentRegisterationScreenBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentRegisterationScreenBinding.inflate(inflater, container, false)
-        mAuth = FirebaseAuth.getInstance()
         signInWithGoogleViewModel =
             ViewModelProvider(requireActivity())[SignInWithGoogleViewModel::class.java]
-        signInWithFacebookViewModel=
+        signInWithFacebookViewModel =
             ViewModelProvider(requireActivity())[SignInWithFacebookViewModel::class.java]
-        binding.phoneBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_registerationScreen_to_verifyMobileNumberScreen)
-        }
-        binding.googleBtn.setOnClickListener {
-            signInWithGoogleViewModel.signInWithGoogle(requireActivity(),
-                getString(R.string.default_web_client_id))
-        }
+        completeRegistrationViewModel =
+            ViewModelProvider(requireActivity())[CompleteRegistrationViewModel::class.java]
 
-        binding.fbBtn.setOnClickListener {
-            signInWithFacebookViewModel.signInWithFacebook(requireActivity())
-        }
+        registerWithOtp()
+        registerWithGoogle()
+        registerWithFacebook()
         return binding.root
     }
 
+    private fun registerWithOtp() {
+        binding.phoneBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_registerationScreen_to_verifyMobileNumberScreen)
+            val otp:String=TypesOfRegistration.OTP.toString()
+            completeRegistrationViewModel.returnRegistrationType(otp)
+        }
+    }
+
+    private fun registerWithFacebook() {
+        binding.fbBtn.setOnClickListener {
+            signInWithFacebookViewModel.signInWithFacebook(requireActivity())
+            val facebook:String=TypesOfRegistration.FACEBOOK.toString()
+            completeRegistrationViewModel.returnRegistrationType(facebook)
+        }
+    }
+
+    private fun registerWithGoogle() {
+        binding.googleBtn.setOnClickListener {
+            signInWithGoogleViewModel.signInWithGoogle(requireActivity(),
+                getString(R.string.default_web_client_id))
+            val google:String=TypesOfRegistration.GOOGLE.toString()
+            completeRegistrationViewModel.returnRegistrationType(google)
+        }
+    }
 
 
 }

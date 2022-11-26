@@ -2,13 +2,12 @@ package com.a7medkenawy.bloodbank.data.repository
 
 import android.app.Activity
 import android.content.Intent
-import android.provider.Settings.Global.getString
 import android.util.Log
-import androidx.core.app.ActivityCompat.startActivityForResult
+import android.widget.Toast
 import com.a7medkenawy.bloodbank.domain.repository.FirebaseRepository
 import com.a7medkenawy.bloodbank.presentation.intro.regestration.sgininwithphonenumber.VerifyViewModel
+import com.a7medkenawy.bloodbank.utils.Constants.callBackManager
 import com.facebook.AccessToken
-import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginManager
@@ -19,7 +18,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.FirebaseException
 import com.google.firebase.FirebaseTooManyRequestsException
 import com.google.firebase.auth.*
-import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -87,19 +85,21 @@ class FirebaseRepositoryImpl @Inject constructor(
     }
 
     override suspend fun signInWithFacebook(activity: Activity) {
-        val callbackManager=CallbackManager.Factory.create()
         LoginManager.getInstance().
-        logInWithReadPermissions(activity,Arrays.asList("email","public_profile"))
-        LoginManager.getInstance().registerCallback(callbackManager ,object : FacebookCallback<LoginResult> {
+        logInWithReadPermissions(activity, listOf("email","public_profile"))
+        LoginManager.getInstance().registerCallback(callBackManager ,object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
+//                Toast.makeText(activity,"onSuccess",Toast.LENGTH_LONG).show()
                 handleFacebookAccessToken(activity,loginResult.accessToken)
             }
 
             override fun onCancel() {
+                Toast.makeText(activity,"onCancel",Toast.LENGTH_LONG).show()
                 Log.d("KENO", "facebook:onCancel")
             }
 
             override fun onError(error: FacebookException) {
+                Toast.makeText(activity,"onError",Toast.LENGTH_LONG).show()
                 Log.d("KENO", "facebook:onError", error)
             }
         })
@@ -116,16 +116,9 @@ class FirebaseRepositoryImpl @Inject constructor(
         auth.signInWithCredential(credential)
             .addOnCompleteListener(activity) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
-//                    Log.d(TAG, "signInWithCredential:success")
-//                    val user = auth.currentUser
-//                    updateUI(user)
+                    Toast.makeText(activity,"task is successful",Toast.LENGTH_LONG).show()
                 } else {
-                    // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "signInWithCredential:failure", task.exception)
-//                    Toast.makeText(baseContext, "Authentication failed.",
-//                        Toast.LENGTH_SHORT).show()
-//                    updateUI(null)
+                    Toast.makeText(activity,"task is not successful ${task.exception!!.message}",Toast.LENGTH_LONG).show()
                 }
             }
     }

@@ -7,6 +7,7 @@
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/button_background.xml" value="0.118" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/button_background_white.xml" value="0.118" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/circle_background.xml" value="0.118" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/edittextbackground.xml" value="0.141" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/facebook_button_background.xml" value="0.1605" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/google_background.xml" value="0.1605" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/ic_arrow.xml" value="0.118" />
@@ -15,18 +16,25 @@
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/number_ed_background.xml" value="0.1605" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/otb_button_background.xml" value="0.1605" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/otp_background.xml" value="0.1605" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/radiobuttonbackground.xml" value="0.1155" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/radiobuttonselectedbackground.xml" value="0.1155" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/drawable/spinner_style.xml" value="0.151" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/font/aclonica.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/font/allan_bold.xml" value="0.21851851851851853" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/activity_main.xml" value="0.1388888888888889" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_complete_registration_screen.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_complete_restration_screen.xml" value="0.22" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_first_screen.xml" value="0.18" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_home_screen.xml" value="0.21875" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_registeration_screen.xml" value="0.22" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_registration_screen.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_second_screen.xml" value="0.22" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_send_otp_screen.xml" value="0.25" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_splash_screen.xml" value="0.2" />
-        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_third_screen.xml" value="0.25" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_third_screen.xml" value="0.33" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_verify_mobile_number_screen.xml" value="0.25" />
         <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/fragment_view_pager.xml" value="0.21875" />
+        <entry key="..\:/Users/a7med/AndroidStudioProjects/BloodBank2/app/src/main/res/layout/style_spinner.xml" value="0.23958333333333334" />
       </map>
     </option>
   </component>
@@ -35,5 +43,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

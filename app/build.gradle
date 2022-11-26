@@ -17,7 +17,11 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-
+        Properties properties=new Properties()
+        properties.load(project.rootProject.file("local.properties").newDataInputStream())
+        buildConfigField "String", "facebook_app_id", "\"${properties.getProperty("facebook_app_id")}\""
+        buildConfigField "String", "fb_login_protocol_scheme", "\"${properties.getProperty("fb_login_protocol_scheme")}\""
+        buildConfigField "String", "facebook_client_token", "\"${properties.getProperty("facebook_client_token")}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildFeatures{
@@ -91,4 +95,15 @@ dependencies {
 
     //facebook
     implementation 'com.facebook.android:facebook-android-sdk:4.42.0'
+
+    //material design
+    implementation "com.google.android.material:material:1.8.0-alpha02"
+
+    //circle imageView
+//    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.mikhaellopez:circularimageview:4.3.1'
+
+    //Coil
+    implementation("io.coil-kt:coil:2.2.2")
+
 }

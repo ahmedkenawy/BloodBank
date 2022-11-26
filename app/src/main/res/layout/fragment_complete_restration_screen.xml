@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".presentation.intro.complete_registration.CompleteRegistrationScreen">
+
+            <ImageView
+                android:id="@+id/verify_screen_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/become_donor"
+                android:textColor="@color/red"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/verify_screen_back_btn"
+                app:layout_constraintStart_toEndOf="@+id/verify_screen_back_btn"
+                app:layout_constraintTop_toTopOf="@+id/verify_screen_back_btn" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/user_iv"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/bussinessman"
+                app:civ_border_color="@color/red"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                app:civ_shadow_color="@color/red"
+                app:civ_shadow_radius="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/name_edit_text"
+                app:layout_constraintStart_toStartOf="@+id/name_edit_text"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <EditText
+                android:id="@+id/name_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/edittextbackground"
+                android:ems="10"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_iv" />
+
+            <EditText
+                android:id="@+id/email_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/edittextbackground"
+                android:ems="10"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:hint="@string/e_mail"
+                android:inputType="textEmailAddress"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="10dp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name_edit_text" />
+
+            <EditText
+                android:id="@+id/phone_number_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/edittextbackground"
+                android:ems="10"
+                android:fontFamily="@font/roboto_condensed_regular"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="10dp"
+
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email_edit_text" />
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/gender"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/email_edit_text"
+                app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:checkedButton="@id/radioButton"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/email_edit_text"
+                app:layout_constraintStart_toStartOf="@+id/email_edit_text"
+                app:layout_constraintTop_toBottomOf="@+id/gender">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/radiobuttonselectedbackground"
+                    android:button="@null"
+                    android:drawableTop="@drawable/bussinessman"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/male" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/radiobuttonselectedbackground"
+                    android:button="@null"
+                    android:drawableTop="@drawable/businesswoman"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:text="@string/female" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/select_blood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/select_blood_group"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/gender"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="24dp"
+                app:checkedChip="@id/ap"
+                app:layout_constraintEnd_toEndOf="@+id/email_edit_text"
+                app:layout_constraintStart_toStartOf="@+id/email_edit_text"
+                app:layout_constraintTop_toBottomOf="@+id/select_blood"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/ap"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="A+" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/am"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="A-" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/bp"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="B+" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/bm"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="B-" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/op"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="O+" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/om"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="O-" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/abm"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="AB-" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/abp"
+                    style="@style/customChipStyle"
+                    android:layout_width="50dp"
+                    android:layout_height="55dp"
+                    android:text="AB+" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/comp_reg_done"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/otb_button_background"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="15dp"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/chipGroup"
+                app:layout_constraintStart_toStartOf="@+id/chipGroup"
+                app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/spinner_style"
+                android:dropDownSelector="@drawable/ic_spinner_place"
+                app:layout_constraintEnd_toEndOf="@+id/phone_number_edit_text"
+                app:layout_constraintStart_toStartOf="@+id/phone_number_edit_text"
+                app:layout_constraintTop_toBottomOf="@+id/phone_number_edit_text" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                app:layout_constraintTop_toBottomOf="@id/comp_reg_done"
+                app:layout_constraintStart_toStartOf="@id/comp_reg_done"
+                app:layout_constraintEnd_toEndOf="@id/comp_reg_done"
+                 android:visibility="invisible"
+                tools:layout_editor_absoluteY="763dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

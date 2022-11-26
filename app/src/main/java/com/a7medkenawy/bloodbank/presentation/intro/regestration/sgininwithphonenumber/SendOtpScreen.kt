@@ -14,6 +14,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.a7medkenawy.bloodbank.R
 import com.a7medkenawy.bloodbank.databinding.FragmentSendOtpScreenBinding
+import com.a7medkenawy.bloodbank.presentation.intro.complete_registration.CompleteRegistrationViewModel
+import com.a7medkenawy.bloodbank.utils.TypesOfRegistration
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
@@ -25,6 +27,7 @@ class SendOtpScreen : Fragment() {
     private lateinit var viewModel: VerifyViewModel
     val args: SendOtpScreenArgs by navArgs()
     private var verificationId: String? = null
+    lateinit var completeRegistrationViewModel: CompleteRegistrationViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +35,8 @@ class SendOtpScreen : Fragment() {
     ): View? {
         binding = FragmentSendOtpScreenBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(requireActivity())[VerifyViewModel::class.java]
+        completeRegistrationViewModel =
+            ViewModelProvider(requireActivity())[CompleteRegistrationViewModel::class.java]
         binding.otpScreenPhoneNumber.text = args.phoneNumber
         viewModel.verificationId.asLiveData().observe(viewLifecycleOwner) { verificationId ->
             this.verificationId = verificationId
@@ -70,6 +75,8 @@ class SendOtpScreen : Fragment() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     findNavController().navigate(R.id.action_sendOtpScreen_to_homeScreen)
+                    completeRegistrationViewModel.returnRegistrationType(TypesOfRegistration.OTP.toString())
+                    completeRegistrationViewModel.sendPhoneNumberToCompleteRegistration(args.phoneNumber)
                 } else {
                     binding.verifyBtn.visibility = View.VISIBLE
                     binding.verifyOtpProgressbar.visibility = View.INVISIBLE

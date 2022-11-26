@@ -9,11 +9,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.a7medkenawy.bloodbank.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashScreen : Fragment() {
 
+
+    @Inject
+    lateinit var mAuth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -21,11 +27,12 @@ class SplashScreen : Fragment() {
         val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
         Handler().postDelayed({
-            if (onBoardingFinished()) {
+            if (mAuth.currentUser!=null){
+                findNavController().navigate(R.id.action_splashScreen_to_homeScreen)
+            }else if (onBoardingFinished()) {
                 findNavController().navigate(R.id.action_splashScreen_to_registerationScreen2)
             } else {
                 findNavController().navigate(R.id.action_splashScreen_to_fragmentViewPager)
-
             }
         }, 3000)
 
@@ -36,5 +43,4 @@ class SplashScreen : Fragment() {
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         return sharedPref.getBoolean("finished", false)
     }
-
 }

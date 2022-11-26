@@ -15,4 +15,10 @@
     </style>
 
 
+    <style name="customChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="chipBackgroundColor">@color/chip_background_color</item>
+        <item name="android:textColor">@color/textviewchip</item>
+        <item name="strokeColor">@color/chip_background_color</item>
+    </style>
+
 </resources>

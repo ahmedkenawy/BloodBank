@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import com.a7medkenawy.bloodbank.R
-import com.facebook.CallbackManager
+import com.a7medkenawy.bloodbank.utils.Constants.callBackManager
 import com.facebook.FacebookSdk
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
@@ -29,13 +29,28 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 100) {
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            val account = task.getResult(ApiException::class.java)
-            if (task.isSuccessful) {
-                firebaseAuthWithGoogle(account.idToken)
-            } else {
-                Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
-            }
+            loginWithGoogleResult(data)
+        } else {
+            loginWithFacebookResult(requestCode, resultCode, data)
+        }
+    }
+
+    private fun loginWithFacebookResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?,
+    ) {
+        callBackManager.onActivityResult(requestCode, resultCode, data)
+        findNavController(R.id.fragmentContainerView).navigate(R.id.action_registerationScreen_to_homeScreen)
+    }
+
+    private fun loginWithGoogleResult(data: Intent?) {
+        val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+        val account = task.getResult(ApiException::class.java)
+        if (task.isSuccessful) {
+            firebaseAuthWithGoogle(account.idToken)
+        } else {
+            Toast.makeText(this, task.exception?.message, Toast.LENGTH_LONG).show()
         }
     }
 

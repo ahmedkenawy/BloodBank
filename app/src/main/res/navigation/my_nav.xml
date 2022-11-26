@@ -19,7 +19,7 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splashScreen_to_homeScreen"
-            app:destination="@id/homeScreen"
+            app:destination="@id/completeRegistrationScreen"
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
         <action
@@ -38,10 +38,10 @@
             app:destination="@id/registerationScreen" />
     </fragment>
     <fragment
-        android:id="@+id/homeScreen"
-        android:name="com.a7medkenawy.bloodbank.presentation.HomeScreen"
+        android:id="@+id/completeRegistrationScreen"
+        android:name="com.a7medkenawy.bloodbank.presentation.intro.complete_registration.CompleteRegistrationScreen"
         android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_home_screen" />
+        tools:layout="@layout/fragment_complete_restration_screen" />
     <fragment
         android:id="@+id/registerationScreen"
         android:name="com.a7medkenawy.bloodbank.presentation.intro.regestration.RegistrationScreen"
@@ -55,7 +55,7 @@
             app:popUpTo="@id/registerationScreen" />
         <action
             android:id="@+id/action_registerationScreen_to_homeScreen"
-            app:destination="@id/homeScreen" />
+            app:destination="@id/completeRegistrationScreen" />
     </fragment>
     <fragment
         android:id="@+id/verifyMobileNumberScreen"
@@ -79,7 +79,7 @@
         tools:layout="@layout/fragment_send_otp_screen" >
         <action
             android:id="@+id/action_sendOtpScreen_to_homeScreen"
-            app:destination="@id/homeScreen" />
+            app:destination="@id/completeRegistrationScreen" />
         <action
             android:id="@+id/action_sendOtpScreen_to_verifyMobileNumberScreen"
             app:destination="@id/verifyMobileNumberScreen" />
