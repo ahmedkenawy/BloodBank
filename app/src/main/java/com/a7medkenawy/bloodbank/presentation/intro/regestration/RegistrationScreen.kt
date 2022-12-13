@@ -64,8 +64,6 @@ class RegistrationScreen : Fragment() {
     private fun registerWithFacebook() {
         binding.fbBtn.setOnClickListener {
             signInWithFacebookViewModel.signInWithFacebook(requireActivity())
-            val facebook:String=TypesOfRegistration.FACEBOOK.toString()
-            completeRegistrationViewModel.returnRegistrationType(facebook)
         }
     }
 

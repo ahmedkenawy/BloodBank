@@ -74,7 +74,7 @@ class SendOtpScreen : Fragment() {
         FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_sendOtpScreen_to_homeScreen)
+                    findNavController().navigate(R.id.action_registerationScreen_to_completeRegistrationScreen)
                     completeRegistrationViewModel.returnRegistrationType(TypesOfRegistration.OTP.toString())
                     completeRegistrationViewModel.sendPhoneNumberToCompleteRegistration(args.phoneNumber)
                 } else {

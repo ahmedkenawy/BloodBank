@@ -38,5 +38,34 @@
     <string name="female">Female</string>
     <string name="phone_number">Phone Number</string>
 
+    <string-array name="egypt_governates">
+        <item>Cairo</item>
+        <item>Aswan</item>
+        <item>Alexandria</item>
+        <item>Asyut</item>
+        <item>Beheira</item>
+        <item>Beni Suef</item>
+        <item>Dakahlia</item>
+        <item>Red Sea</item>
+        <item>Dakahlia</item>
+        <item>Qena</item>
+        <item>Port Said</item>
+        <item>North Sinai</item>
+        <item>New Valley</item>
+        <item>Monufia</item>
+        <item>Minya</item>
+        <item>Matruh</item>
+        <item>Luxor</item>
+        <item>Kafr El Sheikh</item>
+        <item>Ismailia</item>
+        <item>Giza</item>
+        <item>Gharbia</item>
+        <item>Faiyum</item>
+        <item>Damietta</item>
+        <item>Sharqia</item>
+        <item>Suez</item>
+        <item>Sohag</item>
+        <item>South Sinai</item>
+    </string-array>
 
 </resources>

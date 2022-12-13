@@ -14,12 +14,8 @@ class PhoneNumberUseCase @Inject constructor(
         activity: Activity,
         viewModel: VerifyViewModel,
     ) {
-        if (phoneNumber.trim().isNotEmpty()) {
-            firebaseRepository.signInWithPhoneNumber(phoneNumber, activity, viewModel)
-        } else {
-            Toast.makeText(activity.applicationContext, "Fields cannot be empty", Toast.LENGTH_LONG)
-                .show()
-        }
+        firebaseRepository.signInWithPhoneNumber(phoneNumber, activity, viewModel)
+
     }
 
 

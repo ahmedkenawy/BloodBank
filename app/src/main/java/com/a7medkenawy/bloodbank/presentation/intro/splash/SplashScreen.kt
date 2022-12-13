@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.a7medkenawy.bloodbank.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -28,7 +27,7 @@ class SplashScreen : Fragment() {
 
         Handler().postDelayed({
             if (mAuth.currentUser!=null){
-                findNavController().navigate(R.id.action_splashScreen_to_homeScreen)
+                findNavController().navigate(R.id.action_registerationScreen_to_completeRegistrationScreen)
             }else if (onBoardingFinished()) {
                 findNavController().navigate(R.id.action_splashScreen_to_registerationScreen2)
             } else {

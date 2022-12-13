@@ -18,7 +18,7 @@
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splashScreen_to_homeScreen"
+            android:id="@+id/action_registerationScreen_to_completeRegistrationScreen"
             app:destination="@id/completeRegistrationScreen"
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
@@ -41,7 +41,11 @@
         android:id="@+id/completeRegistrationScreen"
         android:name="com.a7medkenawy.bloodbank.presentation.intro.complete_registration.CompleteRegistrationScreen"
         android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_complete_restration_screen" />
+        tools:layout="@layout/fragment_complete_restration_screen" >
+        <action
+            android:id="@+id/action_completeRegistrationScreen_to_homeScreen"
+            app:destination="@id/homeScreen" />
+    </fragment>
     <fragment
         android:id="@+id/registerationScreen"
         android:name="com.a7medkenawy.bloodbank.presentation.intro.regestration.RegistrationScreen"
@@ -54,7 +58,7 @@
             app:popEnterAnim="@android:anim/slide_out_right"
             app:popUpTo="@id/registerationScreen" />
         <action
-            android:id="@+id/action_registerationScreen_to_homeScreen"
+            android:id="@+id/action_registerationScreen_to_completeRegistrationScreen"
             app:destination="@id/completeRegistrationScreen" />
     </fragment>
     <fragment
@@ -78,7 +82,7 @@
         android:label="fragment_send_otp_screen"
         tools:layout="@layout/fragment_send_otp_screen" >
         <action
-            android:id="@+id/action_sendOtpScreen_to_homeScreen"
+            android:id="@+id/action_registerationScreen_to_completeRegistrationScreen"
             app:destination="@id/completeRegistrationScreen" />
         <action
             android:id="@+id/action_sendOtpScreen_to_verifyMobileNumberScreen"
@@ -87,4 +91,9 @@
             android:name="phoneNumber"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="com.a7medkenawy.bloodbank.HomeScreen"
+        android:label="fragment_home_screen"
+        tools:layout="@layout/fragment_home_screen" />
 </navigation>

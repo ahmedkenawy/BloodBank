@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dagger.hilt.android.AndroidEntryPoint
 
+
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var mAuth: FirebaseAuth
@@ -41,7 +42,6 @@ class MainActivity : AppCompatActivity() {
         data: Intent?,
     ) {
         callBackManager.onActivityResult(requestCode, resultCode, data)
-        findNavController(R.id.fragmentContainerView).navigate(R.id.action_registerationScreen_to_homeScreen)
     }
 
     private fun loginWithGoogleResult(data: Intent?) {
@@ -58,10 +58,15 @@ class MainActivity : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         mAuth.signInWithCredential(credential)
             .addOnSuccessListener {
-                findNavController(R.id.fragmentContainerView).navigate(R.id.action_registerationScreen_to_homeScreen)
+                findNavController(com.a7medkenawy.bloodbank.R.id.fragmentContainerView).navigate(com.a7medkenawy.bloodbank.R.id.action_registerationScreen_to_completeRegistrationScreen)
             }
             .addOnFailureListener {
                 Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
             }
+    }
+
+    fun gotoCompleteRegistrationActivity() {
+        findNavController(R.id.fragmentContainerView)
+            .navigate(R.id.action_registerationScreen_to_completeRegistrationScreen)
     }
 }
