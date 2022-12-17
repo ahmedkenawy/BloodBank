@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
-        android:name="com.a7medkenawy.bloodbank.HomeScreen"
+        android:name="com.a7medkenawy.bloodbank.presentation.home.HomeScreen"
         android:label="fragment_home_screen"
         tools:layout="@layout/fragment_home_screen" />
 </navigation>

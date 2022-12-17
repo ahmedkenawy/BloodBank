@@ -17,15 +17,15 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
-        Properties properties=new Properties()
+        Properties properties = new Properties()
         properties.load(project.rootProject.file("local.properties").newDataInputStream())
         buildConfigField "String", "facebook_app_id", "\"${properties.getProperty("facebook_app_id")}\""
         buildConfigField "String", "fb_login_protocol_scheme", "\"${properties.getProperty("fb_login_protocol_scheme")}\""
         buildConfigField "String", "facebook_client_token", "\"${properties.getProperty("facebook_client_token")}\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildFeatures{
-        dataBinding=true
+    buildFeatures {
+        dataBinding = true
     }
 
     buildTypes {
@@ -50,6 +50,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -74,7 +75,6 @@ dependencies {
     // Dagger - Hilt
     implementation "com.google.dagger:hilt-android:2.43.2"
     kapt "com.google.dagger:hilt-compiler:2.43.2"
-
 
     // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
@@ -107,4 +107,7 @@ dependencies {
     //Coil
     implementation("io.coil-kt:coil:2.2.2")
 
+
+    //smooth Bottom Bar
+    implementation "com.github.ibrahimsn98:SmoothBottomBar:1.7.9"
 }

@@ -71,6 +71,8 @@ class CompleteRegistrationScreen : Fragment(), AdapterView.OnItemSelectedListene
 
         }
         handleAllRegistrationState()
+        setUpChipGroup()
+        handleGenderType()
         onPressButtonDone()
         return binding.root
     }
@@ -124,8 +126,6 @@ class CompleteRegistrationScreen : Fragment(), AdapterView.OnItemSelectedListene
         phoneNumber = binding.phoneNumberEditText.text.toString()
         name = binding.nameEditText.text.toString()
         email = binding.emailEditText.text.toString()
-        handleGenderType()
-        setUpChipGroup()
     }
 
     private fun getUserDetails(): User {
@@ -136,13 +136,15 @@ class CompleteRegistrationScreen : Fragment(), AdapterView.OnItemSelectedListene
             phoneNumber,
             governorate,
             gender,
-            bloodType)
+            bloodType,
+            true
+        )
     }
 
     private fun fillFieldsWithDataIfUsedFacebookOrGoogle() {
         setUpNameEditText()
         setUpEmailEditText()
-//        setUpProfileImage()
+
     }
 
     private fun setPhoneNumberWhenUserUsingOtp() {
@@ -151,13 +153,6 @@ class CompleteRegistrationScreen : Fragment(), AdapterView.OnItemSelectedListene
         binding.phoneNumberEditText.isEnabled = false
     }
 
-//    private fun setUpProfileImage() {
-//        if (auth.currentUser?.photoUrl != null) {
-//            image = auth.currentUser?.photoUrl.toString()
-//            val uploadUri: Uri = Uri.fromFile(File(image))
-//            binding.userIv.load(uploadUri)
-//        }
-//    }
 
     private fun setUpEmailEditText() {
         if (auth.currentUser?.email != null) {
@@ -182,7 +177,6 @@ class CompleteRegistrationScreen : Fragment(), AdapterView.OnItemSelectedListene
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
             val chip = group.findViewById<Chip>(checkedId)
             bloodType = chip.text.toString().uppercase(Locale.ROOT)
-
         }
     }
 
